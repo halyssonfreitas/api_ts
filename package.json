@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/halyssonfreitas/api_ts/issues"
   },
-  "homepage": "https://github.com/halyssonfreitas/api_ts#readme"
+  "homepage": "https://github.com/halyssonfreitas/api_ts#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "http-status": "^1.5.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
 }
