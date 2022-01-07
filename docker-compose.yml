@@ -1,0 +1,18 @@
+version: "3"
+services:
+  api:
+    image: halyssonfreitas/api_ts
+    ports:
+      - "5000:3050"
+    links:
+      - link-db
+    depends_on:
+      - link-db
+    
+  link-db:
+    image: mongo
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    environment:
+      - AUTH=no
