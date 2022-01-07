@@ -1,19 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
+const bodyParser = require("body-parser");
 const DB_1 = require("./infra/DB");
 class StartUp {
     //digita ctor e enter
     constructor() {
         this.app = express();
         this.connection();
+        this.middler();
         this.routes();
+    }
+    middler() {
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({ extended: false }));
     }
     //criando rotas
     routes() {
         this.app.route('/').get((req, res) => {
             res.send({ versao: '0.0.1' });
         });
+        this.app.route('/');
     }
     connection() {
         this._db = new DB_1.default();
