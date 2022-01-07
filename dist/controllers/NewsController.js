@@ -19,20 +19,20 @@ class NewsController {
         let news = req.body;
         NewsService_1.default.create(news)
             // TO-DO refazer retornando o id da news
-            .then(news => Helper_1.default.sendResponse(res, HttpStatus, "Notícia cadastrada com sucesso!"))
+            .then(news => Helper_1.default.sendResponse(res, HttpStatus.OK, "Notícia cadastrada com sucesso!"))
             .catch(error => console.error.bind(console, `NewsController - create() : ${error}`));
     }
     update(req, res) {
         const _id = req.params.id;
         let news = req.body;
         NewsService_1.default.update(_id, news)
-            .then(news => Helper_1.default.sendResponse(res, HttpStatus, "Notícia atualizada com sucesso!"))
+            .then(news => Helper_1.default.sendResponse(res, HttpStatus.OK, "Notícia atualizada com sucesso!"))
             .catch(error => console.error.bind(console, `NewsController - update() : ${error}`));
     }
     delete(req, res) {
         const _id = req.params.id;
         NewsService_1.default.delete(_id)
-            .then(news => Helper_1.default.sendResponse(res, HttpStatus, "Notícia deletada com sucesso!"))
+            .then(news => Helper_1.default.sendResponse(res, HttpStatus.OK, "Notícia deletada com sucesso!"))
             .catch(error => console.error.bind(console, `NewsController - delete() : ${error}`));
     }
 }
