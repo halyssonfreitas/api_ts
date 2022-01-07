@@ -8,7 +8,8 @@ class DB{
 
     createConnection() {
         console.log(this.DB_URL)
-        mongoose.createConnection(this.DB_URL)
+        //mongoose.createConnection(this.DB_URL) // esse não funciona, estudar a diferença
+        mongoose.connect(this.DB_URL)
         
     }
 }
