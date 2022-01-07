@@ -26,7 +26,7 @@ class NewsController {
         .then(news => Helper.sendResponse(res, HttpStatus, "Notícia cadastrada com sucesso!"))
         .catch(error => console.error.bind(console, `NewsController - create() : ${error}`))
     }
-    uptdate(req, res) {
+    update(req, res) {
         const _id = req.params.id
         let news = req.body
 
@@ -43,3 +43,5 @@ class NewsController {
     }
 
 }
+
+export default new NewsController();
