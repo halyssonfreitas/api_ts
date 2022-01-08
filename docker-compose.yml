@@ -1,14 +1,21 @@
 version: "3"
+
+networks:
+  tetao:
+
 services:
   api:
     container_name: api
-    image: halyssonfreitas_alpine/api_ts
+    image: halysson/alpine_api_ts
     ports:
-      - "5000:3050"
+      - "3050:3050"
     links:
       - link_db
     depends_on:
       - link_db
+    networks:
+      - tetao
+
     
   link_db:
     container_name: link_db
@@ -18,3 +25,5 @@ services:
       - "28017:28017"
     environment:
       - AUTH=no
+    networks:
+      - tetao
