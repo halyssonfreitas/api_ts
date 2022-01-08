@@ -5,7 +5,7 @@ class DB {
     // configurar o DB_URL
     
     // Para isso funcionar faltava container_name: link_db no docker-compose.yml
-    private DB_URL = "mongodb://link_db/db_api_ts"
+    private DB_URL = "mongodb://link_db:27017/db_api_ts"
 
     // isso é POG, tenho que arrumar uma forma de encontrar o IP do BD
     // por meio de código, uma vez que, por meio da forma 'mongodb://link-db/db_api_ts' não funciona
